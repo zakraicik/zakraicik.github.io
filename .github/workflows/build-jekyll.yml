@@ -1,5 +1,9 @@
 name: Build and Deploy to Github Pages
 
+defaults:
+  run:
+    working-directory: site
+
 on:
   push:
     branches:

@@ -10,11 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Repository checkout 
 
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v2
+      - name: Cach dependencies 
+        working-directory: ./site/
         with:
-          working-direcotry: ./site/
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |

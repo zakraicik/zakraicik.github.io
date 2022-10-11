@@ -12,14 +12,24 @@ jobs:
       - name: Repository checkout 
         uses: actions/checkout@v3
 
-      - name: Cach dependencies 
-        uses: actions/cache@v2
+      - name: Cache dependencies 
+        uses: actions/cache@v3
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-gems-
-          # working-directory: ./site/
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm build
+
+      - name: Test
+        run: npm test
 
       # # Use GitHub Deploy Action to build and deploy to Github
       # - uses: jeffreytse/jekyll-deploy-action@v0.4.0

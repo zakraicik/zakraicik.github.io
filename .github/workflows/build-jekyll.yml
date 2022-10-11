@@ -14,12 +14,12 @@ jobs:
 
       - name: Cach dependencies 
         uses: actions/cache@v2
-        working-directory: ./site/
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+          working-directory: ./site/
 
       # # Use GitHub Deploy Action to build and deploy to Github
       # - uses: jeffreytse/jekyll-deploy-action@v0.4.0

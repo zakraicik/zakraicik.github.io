@@ -1,5 +1,11 @@
 name: Build and Deploy to Github Pages
 
+permissions:
+  contents: write
+  pull-requests: write 
+  issues: read
+  packages: none
+
 on:
   push:
     branches:
@@ -20,7 +26,7 @@ jobs:
             ${{ runner.os }}-gems-
 
       # Use GitHub Deploy Action to build and deploy to Github
-      - uses: jeffreytse/jekyll-deploy-action@v0.4.0
+      - uses: https://github.com/zakraicik/jekyll4-deploy-gh-pages
         with:
           provider: 'github'
           token: ${{ secrets.GITHUB_TOKEN }} # It's your Personal Access Token(PAT)

@@ -1,11 +1,5 @@
 name: Build and Deploy to Github Pages
 
-permissions:
-  contents: write
-  pull-requests: write 
-  issues: read
-  packages: none
-
 on:
   push:
     branches:

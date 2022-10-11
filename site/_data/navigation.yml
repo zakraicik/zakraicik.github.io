@@ -4,9 +4,7 @@ menu__settings:
     - title: Home
       url: /
     - title: About
-      submenu:
-        - url: /about/
-          title: About
+      url: /about/
     - title: Projects
       url: /projects/
     - title: Blog

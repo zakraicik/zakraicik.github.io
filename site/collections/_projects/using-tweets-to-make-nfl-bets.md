@@ -8,7 +8,7 @@ image: /uploads/project-nfl-tweets.jpeg
 
 Every week, I browse twitter and I notice a few hot takes related to NFL games. Take for example, this person predicting the 5-1 New York Giants will lose to the 2-3 Jacksonville Jaguars. This seems unlikely given the records, but who knows?
 
-&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Yes. New York Giants will lose.&lt;/p&gt;&amp;mdash; Rev. Eric Dunn (@ericvdunn) &lt;a href="https://twitter.com/ericvdunn/status/1583064741848961024?ref\_src=twsrc%5Etfw"&gt;October 20, 2022&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+![](/uploads/screen-shot-2022-10-23-at-1-51-01-pm.png){: width="602" height="238"}
 
 In fact, every week millions of people around the world take to twitter to share their thoughts about upcoming NFL games. I always wonder, are these tweets related to how teams will perform? Can they help me predict winners and losers each week?&nbsp;
 

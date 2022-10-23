@@ -33,7 +33,7 @@ At the time of writing this article, there are 3 levels of access for the API. I
   * Retrieve up to 2 million Tweets per month
   * Supports all authentication methods&nbsp;
 * **Academic Research:**
-  * **​​​​​​​​​​​​​​**Retrieve up to 10 million Tweets per month
+  * **​​​​​​​**Retrieve up to 10 million Tweets per month
   * Access to full tweet archive & advanced filter operators
   * Supports all authentication methods&nbsp;
 

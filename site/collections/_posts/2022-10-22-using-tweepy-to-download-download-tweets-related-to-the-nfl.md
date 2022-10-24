@@ -6,7 +6,7 @@ tags:
   - get-data
   - nfl-tweets
   - tweepy
-image: /uploads/nfl-twitter-2.jpeg
+image: /uploads/nfl-twitter.jpeg
 ---
 # Downloading NFL Tweets&nbsp;
 

@@ -179,12 +179,12 @@ jobs:
           git add -A
           git commit -m "Data updated" -a
           git push
-​​​​​​​{% endraw %}
+{% endraw %}
 ```
 
 ##### Github Secrets
 
-You might notice a few of the steps above use a piece of code that looks like `${{ secrets.&amp;lt;secret name&amp;gt; }}`. If you remember from the previous [post](https://zakraicik.xyz/blog/using-tweepy-to-download-download-tweets-related-to-the-nfl) detailing our `get_tweets.py` file, we use environment variables to pass API keys to our script and authenticate our client. However, how would Github know these key values if the runner doesn't have access to our local environment variables?
+You might notice a few of the steps above use a piece of code that looks like `${{ secrets.&amp;amp;lt;secret name&amp;amp;gt; }}`. If you remember from the previous [post](https://zakraicik.xyz/blog/using-tweepy-to-download-download-tweets-related-to-the-nfl) detailing our `get_tweets.py` file, we use environment variables to pass API keys to our script and authenticate our client. However, how would Github know these key values if the runner doesn't have access to our local environment variables?
 
 Secrets are encrypted environment variables that you create in an organization, repository, or repository environment. In other words, they are values that can be accessed by the VM as environment variables.
 

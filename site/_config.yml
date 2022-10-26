@@ -123,3 +123,6 @@ _editables:
 tag_page_dir: tag
 tag_page_layout: tag_page
 tag_permalink_style: /:title
+
+# Google analytics 
+google_analytics_key: UA-29536056-1

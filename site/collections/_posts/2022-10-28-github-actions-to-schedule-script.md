@@ -1,10 +1,11 @@
 ---
-date: 2022-10-27 14:00:00
+date: 2022-10-28 00:00:00
 title: Github Actions to Schedule Script
 description: 'Scheduling the Tweepy script to download NFL tweets using Github actions. '
 tags:
   - github
   - nfl-tweets
+  - python
 image: /uploads/github-actions.png
 ---
 # Downloading NFL Tweets
@@ -53,7 +54,7 @@ Instead, I will use Github Actions to automate this data collection effort and a
 
 The first step to setting up a Github action is to create a `.github/workflows/` directory in the root of your repository. The workflow directory will house our YAML file.
 
-![](/uploads/screen-shot-2022-10-24-at-5-25-10-pm.png){: width="2008" height="808"}
+&nbsp;
 
 ##### Writing the YAML File
 
@@ -190,7 +191,7 @@ Secrets are encrypted environment variables that you create in an organization, 
 
 For this project, I stored the Twitter `BEARER_TOKEN` as a secret that can be accessed by the Github action.
 
-![](/uploads/screen-shot-2022-10-24-at-5-47-33-pm.png){: width="1754" height="510"}
+&nbsp;
 
 In our `get_tweets.py` script, Github uses this secret to create the `BEARER_TOKEN` variable required by the rest of the script.
 
@@ -206,14 +207,14 @@ Creating a secret is easy. Simply navigate to the settings within your Github re
 
 Once you have created your action, you can view the results of that action. On the home page of your repository, navigate to the actions section.
 
-![](/uploads/screen-shot-2022-10-24-at-5-51-20-pm.png){: width="2028" height="486"}
+&nbsp;
 
 From there, you can see a list of all actions executed within your repository.
 
-![](/uploads/screen-shot-2022-10-24-at-5-52-09-pm.png){: width="2012" height="944"}
+&nbsp;
 
 Clicking on any of these actions will bring up a detailed view of what happened when that action was executed. You'll notice that each step we defined in our YAML file has it's own item and can be expanded to get more detail. For the screenshot below, I expanded the result of the `get_tweets.py` step so we can see how many tweets were added to the extract.
 
-![](/uploads/screen-shot-2022-10-24-at-5-53-16-pm.png){: width="1986" height="1446"}
+&nbsp;
 
 Feel free to reach out with any questions using the [contact](https://zakraicik.xyz/contact/) page or hitting me up on any of my social links\!

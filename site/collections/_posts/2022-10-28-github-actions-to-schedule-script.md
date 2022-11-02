@@ -54,7 +54,7 @@ Instead, I will use Github Actions to automate this data collection effort and a
 
 The first step to setting up a Github action is to create a `.github/workflows/` directory in the root of your repository. The workflow directory will house our YAML file.
 
-&nbsp;
+![](/uploads/screen-shot-2022-11-02-at-7-31-39-am.png){: width="906" height="690"}
 
 ##### Writing the YAML File
 
@@ -185,13 +185,13 @@ jobs:
 
 ##### Github Secrets
 
-You might notice a few of the steps above use a piece of code that looks like `${{ secrets.&amp;amp;amp;lt;secret name&amp;amp;amp;gt; }}`. If you remember from the previous [post](https://zakraicik.xyz/blog/using-tweepy-to-download-download-tweets-related-to-the-nfl) detailing our `get_tweets.py` file, we use environment variables to pass API keys to our script and authenticate our client. However, how would Github know these key values if the runner doesn't have access to our local environment variables?
+You might notice a few of the steps above use a piece of code that looks like `${{ secrets.&amp;amp;amp;amp;lt;secret name&amp;amp;amp;amp;gt; }}`. If you remember from the previous [post](https://zakraicik.xyz/blog/using-tweepy-to-download-download-tweets-related-to-the-nfl) detailing our `get_tweets.py` file, we use environment variables to pass API keys to our script and authenticate our client. However, how would Github know these key values if the runner doesn't have access to our local environment variables?
 
 Secrets are encrypted environment variables that you create in an organization, repository, or repository environment. In other words, they are values that can be accessed by the VM as environment variables.
 
 For this project, I stored the Twitter `BEARER_TOKEN` as a secret that can be accessed by the Github action.
 
-&nbsp;
+![](/uploads/screen-shot-2022-11-02-at-7-32-52-am.png){: width="932" height="338"}
 
 In our `get_tweets.py` script, Github uses this secret to create the `BEARER_TOKEN` variable required by the rest of the script.
 
@@ -207,14 +207,14 @@ Creating a secret is easy. Simply navigate to the settings within your Github re
 
 Once you have created your action, you can view the results of that action. On the home page of your repository, navigate to the actions section.
 
-&nbsp;
+![](/uploads/screen-shot-2022-11-02-at-7-33-10-am.png){: width="1261" height="453"}
 
 From there, you can see a list of all actions executed within your repository.
 
-&nbsp;
+![](/uploads/screen-shot-2022-11-02-at-7-33-35-am.png){: width="1836" height="753"}
 
 Clicking on any of these actions will bring up a detailed view of what happened when that action was executed. You'll notice that each step we defined in our YAML file has it's own item and can be expanded to get more detail. For the screenshot below, I expanded the result of the `get_tweets.py` step so we can see how many tweets were added to the extract.
 
-&nbsp;
+![](/uploads/screen-shot-2022-11-02-at-7-34-02-am.png){: width="1117" height="788"}
 
 Feel free to reach out with any questions using the [contact](https://zakraicik.xyz/contact/) page or hitting me up on any of my social links\!

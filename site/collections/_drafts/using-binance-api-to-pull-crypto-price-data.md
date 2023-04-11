@@ -1,8 +1,13 @@
 ---
-date: 2023-04-11 00:00:00
+date: 2023-04-11 10:27:00
 title: Cyrpto Prices in Python
 description: Using the Binance API to get historical crypto prices
 tags:
+  - get-data
+  - python
+  - binance
+  - aws
+  - s3
 image: /uploads/binance-api-1.png
 ---
 # Binance API for Historical Crypto Prices

@@ -77,6 +77,8 @@ Now that we have an API key, we need to store them in a place where our code can
 
 ## Pulling prices using Binance API
 
+---
+
 At this point, we have everything we need to start writing the code to pull prices from the Binance API. This section details a few different files, each of which are required to pull historical prices.&nbsp;
 
 * `keys.py`&nbsp;
@@ -162,6 +164,30 @@ def make_api_request(url, params, headers):
         logger.error(f"Error making API request: {e}")
 
     return response
+```
+
+The Binance API returns kline/candlestick data as a list of lists (or an array of arrays). Each inner list represents a single candlestick data point and contains multiple values such as the opening time, opening price, highest price, lowest price, closing price, and so on. However, prefer to have the data stored as a JSON object with more descriptive key-value pairs, you can process the response data and convert the list of lists into a list of dictionaries before saving it to S3. Therefore we create a helper&nbsp; `convert_to_json(..)`.
+
+```
+def convert_to_json(kline_data):
+    keys = [
+        "open_time",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "close_time",
+        "quote_asset_volume",
+        "number_of_trades",
+        "taker_buy_base_asset_volume",
+        "taker_buy_quote_asset_volume",
+        "ignore",
+    ]
+
+    json_data = [dict(zip(keys, candlestick)) for candlestick in kline_data]
+
+    return json_data
 ```
 
 The last helper function is to\_s3(..). This function creates an AWS client and sends a json to a bucket. There is a lot more you could do with this function, but for the purposes of this project it's not necessary. It's worth noting that you can set up your environment so the key's don't have to be passed as arguments if you want.&nbsp;
@@ -260,6 +286,26 @@ We also use the start and end date to calculate the number of price data points 
 Finally, we make the request to the Binance API. If the request is more than 1,000 data points we make multiple smaller requests. If the request is less than 1,000 data points we make a single request. Ultimately, the function returns a JSON of price data .&nbsp;
 
 ```
+def get_historical_prices(
+    symbol: str,
+    interval: str,
+    start_date: dt.datetime,
+    end_date: dt.datetime,
+) -> Optional[List[dict]]:
+    params = {
+        "symbol": symbol,
+        "interval": interval,
+        "startTime": int(dt.datetime.timestamp(start_date) * 1000),
+        "endTime": int(dt.datetime.timestamp(end_date) * 1000),
+        "limit": 1000,
+    }
+
+    headers = {"X-MBX-APIKEY": API_KEY}
+
+    number_data_points = compute_number_data_points(
+        start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"), interval
+    )
+
     if number_data_points > MAX_DATA_POINTS:
         response_list = []
 
@@ -284,7 +330,8 @@ Finally, we make the request to the Binance API. If the request is more than 1,0
             response = make_api_request(URL, params, headers)
 
             if response is not None:
-                response_list = response_list + response.json()
+                json_data = convert_to_json(response.json())
+                response_list = response_list + json_data
 
             request_start_date = request_end_date + datetime.timedelta(days=1)
 
@@ -308,7 +355,8 @@ Finally, we make the request to the Binance API. If the request is more than 1,0
         response = make_api_request(URL, params, headers)
 
         if response is not None:
-            return response.json()
+            json_data = convert_to_json(response.json())
+            return json_data
 ```
 
 We run the function&nbsp;`get_historical_prices(..)`&nbsp;in main. We use&nbsp;[argparse](https://docs.python.org/3/library/argparse.html){: target="_blank" rel="noopener"}&nbsp;to collect the required arguments through the command line. The function for main looks like this.&nbsp;
@@ -359,11 +407,15 @@ def main():
 In practice, you can run the script through the command line using something like. This uses the default values for symbol and interval, but those values could be passed arguments as well.&nbsp;
 
 ```
-python  getData.py --start_date 2023-02-09 --end_date 2023-04-10
+getData.py --start_date 2017-04-15 --end_date 2023-04-10
 ```
 
 Once this has been run, you can navigate to the S3 bucket you sent the files. You should see something like this. The JSON will contain the request price history.&nbsp;
 
 ![](/uploads/binance-in-s3.png){: width="1070" height="1104"}
+
+Taking a quick look at the data, you can see it is an array of jsons as intended.&nbsp;
+
+![](/uploads/binance-data-preview.png){: width="1086" height="1104"}
 
 Feel free to reach out with any questions using the&nbsp;[contact](https://zakraicik.xyz/contact/)&nbsp;page or hitting me up on any of my social links!

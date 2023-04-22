@@ -1,5 +1,5 @@
 ---
-date:
+date: 2023-04-22 00:00:00
 title: 'Python Backtesting: A Beginner''s Guide'
 description: >-
   we explore the use of historical crypto price data to simulate buy and sell

@@ -16,13 +16,16 @@ image: /uploads/png-image.png
 ---
 # Python Backtesting: A Beginner's Guide
 
-In my [last post](https://zakraicik.xyz/blog/cyrpto-prices-in-python){: target="_blank" rel="noopener"}, I wrote about to use the [Binance](https://www.binance.us/){: target="_blank" rel="noopener"} API to pull historical prices for various Crypto assets. In this article, we use that data to power a **simple** backtester. A backtester is a software tool that allows traders and investors to simulate the performance of their trading strategies using historical market data. By applying a set of rules to the historical data, a backtester can provide valuable insights into how a strategy would have performed in the past, helping traders make more informed decisions in the future.
+In my [last post](https://zakraicik.xyz/blog/cyrpto-prices-in-python){: target="_blank" rel="noopener"}, I wrote about to use the [Binance](https://www.binance.us/){: target="_blank" rel="noopener"} API to pull historical prices for various Crypto assets. In this article, we will lay the foundation for&nbsp;**simple** backtester. A backtester is a software tool that allows traders and investors to simulate the performance of their trading strategies using historical market data. By applying a set of rules to the historical data, a backtester can provide valuable insights into how a strategy would have performed in the past, helping traders make more informed decisions in the future.
 
 Specifically, this article covers.&nbsp;
 
-* Homegrown Backtester vs. Pre-built Backtester
-* Coding a Simple Backtester
-* Ways we can advance our simple backtester
+* Homegrown backtester vs. pre-built backtester
+* Reviewing the format of our historical price data
+* Simulating buy/sell signals using various strategies
+* Next Steps
+
+The full repository can be found [here](https://github.com/zakraicik/crypto_trader/tree/main/crypto_trader){: target="_blank" rel="noopener"}. Keep in mind this article covers one part of a bigger project.&nbsp;
 
 ## Homegrown or Pre-built?
 
@@ -71,6 +74,18 @@ Here are several ways that constructing your own backtester enhances your learni
 5. **Simulation and optimization:** Building your own backtester enables you to experiment with different market conditions, parameter values, and timeframes. This hands-on experience allows you to learn about the robustness of your trading strategies, the importance of out-of-sample testing, and the dangers of over-optimization.
 6. **Debugging and troubleshooting:** Developing a backtester often involves encountering and solving various issues related to coding, logic, or data. Troubleshooting these problems not only enhances your programming skills but also helps you learn about the common pitfalls and challenges associated with backtesting.
 
-## Coding a Simple Backtester
+## Simulating buy/sell signals using various strategies
+
+---
+
+### Strategies.py
+
+The first thing we will do is create a file to store our trading strategies.&nbsp;
+
+### Helper.py
+
+### Simulate.py
+
+## Next Steps
 
 ---

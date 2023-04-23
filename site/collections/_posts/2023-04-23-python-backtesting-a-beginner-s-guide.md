@@ -1,6 +1,6 @@
 ---
 date: 2023-04-23 11:00:00
-title: 'Python Backtesting: A Beginner''s Guide'
+title: 'Python Backtesting: A Beginner''s Guide to Building Your Own Backtester'
 description: >-
   We explore the use of historical crypto price data to simulate buy and sell
   signals for various simple trading strategies using Python.
@@ -12,8 +12,6 @@ tags:
   - s3
 image: /uploads/backtesting.jpeg
 ---
-# Python Backtesting: A Beginner's Guide
-
 In my [last post](https://zakraicik.xyz/blog/cyrpto-prices-in-python){: target="_blank" rel="noopener"}, I wrote about to use the [Binance](https://www.binance.us/){: target="_blank" rel="noopener"} API to pull historical prices for various Crypto assets. In this article, we will start to build the foundation for&nbsp;**simple** backtester. A backtester is a software tool that allows traders and investors to simulate the performance of their trading strategies using historical market data. By applying a set of rules to the historical data, a backtester can provide valuable insights into how a strategy would have performed in the past, helping traders make more informed decisions in the future.
 
 We will focus on generating buy/sell/hold signals against historical price data using various trading strategies. Simulating trades, associated costs, performance etc. is out of scope for this post but will be covered in a future post. Specifically, we will cover the following:

@@ -69,8 +69,6 @@ Here are several ways that constructing your own backtester enhances your learni
 5. **Simulation and optimization:** Building your own backtester enables you to experiment with different market conditions, parameter values, and timeframes. This hands-on experience allows you to learn about the robustness of your trading strategies, the importance of out-of-sample testing, and the dangers of over-optimization.
 6. **Debugging and troubleshooting:** Developing a backtester often involves encountering and solving various issues related to coding, logic, or data. Troubleshooting these problems not only enhances your programming skills but also helps you learn about the common pitfalls and challenges associated with backtesting.
 
-##
-
 ## Simulating buy/sell signals using various strategies
 
 ---

@@ -10,7 +10,7 @@ tags:
   - crypto
   - aws
   - s3
-image: /uploads/python-backtesting.jpg
+image: /uploads/backtesting.jpeg
 ---
 # Python Backtesting: A Beginner's Guide
 

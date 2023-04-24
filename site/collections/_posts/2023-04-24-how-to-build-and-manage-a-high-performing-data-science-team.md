@@ -1,5 +1,5 @@
 ---
-date: 2023-04-23 00:00:00
+date: 2023-04-24 00:00:00
 title: How to Build and Manage a High-Performing Data Science Team
 description: Learn how to build and manage a high-performing data science team.
 tags:

@@ -1,9 +1,9 @@
 ---
-date:
+date: 2023-04-25 00:00:00
 title: >-
   Harnessing the Power of Generative AI: Balancing Innovation with
   Responsibility
-description:
+description: How to responsibly integrate generative AI into your business
 tags:
   - generative-ai
   - ethical-ai

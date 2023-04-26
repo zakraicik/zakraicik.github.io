@@ -1,5 +1,5 @@
 ---
-date: 2023-04-25 00:00:00
+date: 2023-04-27 11:00:00
 title: >-
   Harnessing the Power of Generative AI: Balancing Innovation with
   Responsibility

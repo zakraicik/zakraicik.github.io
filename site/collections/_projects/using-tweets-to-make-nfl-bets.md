@@ -1,34 +1,30 @@
 ---
 date: 2022-10-23 00:00:00
-title: Using Tweets to Make NFL bets
-subtitle: 'Do twitter users actually know what they''re talking about? '
-image: /uploads/project-nfl-tweets.jpeg
+title: Public Cryptography with ECDSA Node
+subtitle: Signature Basics
+image: /uploads/public-key-cryptography.jpeg
 ---
-# ​​​​​​**Hypothesis**
+You can run the react app [here](https://github.com/zakraicik/ecdsa-node).&nbsp;
 
-Every week, I browse twitter and I notice a few hot takes related to NFL games. Take for example, this person predicting the 5-1 New York Giants will lose to the 2-3 Jacksonville Jaguars. This seems unlikely given the records, but who knows?
+Public key cryptography, also known as asymmetric cryptography, is a cryptographic system that uses two separate keys for encryption and decryption processes: a public key and a private key. These keys are mathematically related but cannot be feasibly derived from one another. This system allows for secure communication and data exchange between parties without the need for sharing a common secret key.
 
-![](/uploads/screen-shot-2022-10-23-at-1-51-01-pm.png){: width="602" height="238"}
+The public key is openly shared and can be used by anyone to encrypt a message or verify a digital signature. The private key, on the other hand, is kept secret by its owner and is used to decrypt messages or create digital signatures.
 
-In fact, every week millions of people around the world take to twitter to share their thoughts about upcoming NFL games. I always wonder, are these tweets related to how teams will perform? Can they help me predict winners and losers each week?&nbsp;
+Public key cryptography offers several benefits, including:
 
-To be more specific, we will test the relationship between NFL tweets and betting odds. **In other words, are tweets correlated with betting odds?**
+1. Secure key exchange: Participants can securely exchange keys over an insecure channel without the risk of eavesdropping, as the public key can be freely shared without compromising the private key.
+2. Digital signatures: This allows for verifying the authenticity and integrity of a message, as the sender can sign the message using their private key, and the receiver can verify the signature using the sender's public key.
+3. Confidentiality: Encrypted messages can only be decrypted by someone possessing the corresponding private key, ensuring that the message remains confidential.
 
-# **Path to Testing Hypothesis&nbsp;**
+ECDSA, or Elliptic Curve Digital Signature Algorithm, is a widely-used digital signature algorithm based on elliptic curve cryptography (ECC) in public key cryptography. It is an adaptation of the Digital Signature Algorithm (DSA) that uses elliptic curve mathematics instead of traditional modular arithmetic. ECDSA provides a similar level of security as RSA and DSA but with smaller key sizes, resulting in faster computations and lower resource usage.
 
-*This plan will most likely change as I work to test the hypothesis. I will keep the plan up to date.&nbsp;*
+The main components of ECDSA are:
 
-1. *Downloading Tweets Related to the NFL:&nbsp;*We will develop a dataset of tweets all related to the NFL.&nbsp;
-2. *Isolating Relevant Tweets:&nbsp;*Only a subset of tweets will actually be usable for our purpose. It's likely that many of the tweets we download are purely for marketing or redirect users elsewhere. We want to isolate tweets where the author expresses views about a specific NFL game/team.&nbsp;
-3. *Quantifying some type of Tweet Sentiment:&nbsp;*Once we have isolated the tweets we want, we need to estimate wether that tweet speaks positively or negatively about the NFL game/team. Does the author believe the team will win or lose?&nbsp;
-4. *Comparing Sentiment to Game Odds:* Is there a relationship between tweet sentiment and game odds? Do games with higher average sentiment correlate with games with larger odds (odds suggesting bigger win margins)?&nbsp;
+1. Elliptic curve: A mathematical curve defined by a specific equation. In ECDSA, the curve is chosen from a set of standardized curves that have been extensively studied and are considered secure.
+2. Key pair generation: A private key is generated as a random number within a predefined range, and the corresponding public key is calculated by multiplying the private key with a predefined point (called the generator point) on the elliptic curve.
+3. Signing: To sign a message, the sender generates a unique signature for the message using their private key and the elliptic curve mathematics. This signature ensures the authenticity and integrity of the message.
+4. Verification: To verify the signature, the receiver uses the sender's public key and the elliptic curve mathematics to check whether the signature is valid. If the signature is valid, it confirms that the message was indeed sent by the sender and has not been tampered with.
 
-# **Related Blog Posts&nbsp;**
+ECDSA has become popular in various applications, including secure communications, cryptocurrencies (e.g., Bitcoin and Ethereum), and secure authentication. Its main advantage is the smaller key size compared to RSA, which allows for more efficient cryptographic operations while maintaining a similar level of security.
 
-*I will link specific blog posts here as I complete various phases of the project.&nbsp;*
-
-* [Tweepy To Download Tweets Related To the NFL](/blog/using-tweepy-to-download-download-tweets-related-to-the-nfl)
-
-# Results
-
-*This section will be updated once the project is complete\!*
+**In this project, we build a simple react application that allows us to use a private key(never do this in practice) to look up user balances, and sign/execute transactions.&nbsp;**

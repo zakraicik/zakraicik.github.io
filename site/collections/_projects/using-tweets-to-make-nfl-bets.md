@@ -27,4 +27,18 @@ The main components of ECDSA are:
 
 ECDSA has become popular in various applications, including secure communications, cryptocurrencies (e.g., Bitcoin and Ethereum), and secure authentication. Its main advantage is the smaller key size compared to RSA, which allows for more efficient cryptographic operations while maintaining a similar level of security.
 
-**In this project, we build a simple react application that allows us to use a private key(never do this in practice) to look up user balances, and sign/execute transactions.&nbsp;**
+**In this project, we build a simple react application that allows us to use a private key(never do this in practice) to look up user balances, and sign/execute transactions.** The screenshot below shows the final product.&nbsp;
+
+![](/uploads/final-app.png){: width="2232" height="696"}
+
+# Repository Design
+
+---
+
+This repository maintains both a client and a server. Technically, the client side is responsible for presenting information to the user, handling user interactions, and performing tasks on the user's device. On the other hand, the&nbsp; server side of an application typically involves processing and storing data, handling business logic, and providing access to resources such as databases, APIs, and other services. Our repository looks like this.&nbsp;
+
+![](/uploads/repository-design.png){: width="660" height="1122"}
+
+In our repository, the client side is&nbsp;
+
+#

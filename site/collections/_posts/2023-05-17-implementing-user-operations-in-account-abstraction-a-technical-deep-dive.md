@@ -15,16 +15,6 @@ The proposition of AA stems from the inherent limitations of Ethereum's existing
 
 At the heart of AA lies User Operations (UserOps), a novel element that allows for custom transaction and security configurations. **In this article, we delve into the mechanics of UserOps and offer a step-by-step guide for developers interested in implementing them within the context of AA.**
 
-
-
-
-
-
-
-######
-
-<div> </div>
-
 ## Understanding Account Abstraction
 
 ---

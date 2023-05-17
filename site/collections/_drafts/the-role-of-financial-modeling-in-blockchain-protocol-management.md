@@ -16,9 +16,9 @@ Blockchain technology, with potential applications in fields like finance and he
 
 Financial modeling is a quantitative tool used for forecasting a business or asset's future performance, consolidating earnings and expenses data, applying mathematical models, and making predictions. Key examples include:
 
-1. Discounted Cash Flow (DCF) Analysis: This valuation method estimates the value of an investment by projecting future cash flows over a period and discounting them to present value. It helps assess the intrinsic value of an investment.
-2. Comparative Company Analysis (CCA): Also known as peer group analysis, CCA compares the financial ratios and metrics of a company to similar companies in the same industry. It provides insights into relative value.
-3. Financial Statement Modeling: This process involves creating detailed financial statement projections. It aids in evaluating a company's financial health and supports various financial decision-making processes.
+1. *Discounted Cash Flow (DCF) Analysis:* This valuation method estimates the value of an investment by projecting future cash flows over a period and discounting them to present value. It helps assess the intrinsic value of an investment.
+2. *Comparative Company Analysis (CCA):* Also known as peer group analysis, CCA compares the financial ratios and metrics of a company to similar companies in the same industry. It provides insights into relative value.
+3. *Financial Statement Modeling:* This process involves creating detailed financial statement projections. It aids in evaluating a company's financial health and supports various financial decision-making processes.
 
 ## Applying Financial Modeling Techniques to Blockchain Protocol Management
 

@@ -2,5 +2,5 @@
 date: 2023-05-22 00:00:00
 title: Decentralized Voting App
 subtitle: Built with Truffle & React
-image: /uploads/screenshot-2023-05-22-at-2-09-49-pm.png
+image: /uploads/screenshot-2023-05-22-at-2-11-32-pm.png
 ---
